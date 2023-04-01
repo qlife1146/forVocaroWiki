@@ -1,0 +1,461 @@
+[[html]]
+<!--for special days image script-->
+<div id="special-day-div"style="display: flex; flex-direction: column;">
+    <img id="special-day-img" src=""
+        style="
+            width: 80%;
+            height: auto;
+            box-shadow: 1px 1px 3px hsl(0deg 0% 70%);
+            border-radius: 1em;
+            max-width: 400px;
+            display: none;
+            margin: auto;
+        "
+    />
+    <span id="special-day-copyright" style="text-align: right;"></span>
+</div>
+
+<script type="text/javascript">
+    let special = document.getElementById("special-day-div");
+    let logoImg = document.getElementById("special-day-img");
+    let copyright = document.getElementById("special-day-copyright");
+
+    let today = new Date();
+    let currentYear = today.getFullYear();
+    let currentMonth = today.getMonth() + 1;
+    let currentDate = today.getDate();
+    if (currentMonth === 3 && currentDate === 9) {
+        logoImg.src = "https://vocaro.wdfiles.com/local--files/main/mikuday.jpg";
+        logoImg.style.display = "block";
+        let link = copyrightTemplate('https://twitter.com/sfmk39', 'Sa-fu', 2023);
+        copyright.innerHTML = link;
+    } else if (currentMonth === 4 && currentDate === 1) {
+        logoImg.src = "https://vocaro.wdfiles.com/local--files/main/teto-birth-needygirl.jpg";
+        logoImg.style.display = "block";
+        let link = "© 카사네 테토 생일 축하 위키 디스코드: needygirl, 2023";
+        copyright.innerHTML = link;
+        let newSpan = document.createElement("span");
+        newSpan.id = "new-span";
+        newSpan.innerHTML = "오늘은 카사네 테토의 생일입니다.";
+        special.insertBefore(newSpan, copyright);
+        newSpan.style.fontSize = "25px";
+        newSpan.style.color = "#EF7793";
+        newSpan.style.fontWeight = "bold";
+        newSpan.style.textAlign = "center";
+
+    } else if (currentMonth === 8 && currentDate === 31) {
+        logoImg.src = "";
+        logoImg.style.display = "block";
+    } else if (currentMonth === 10 && currentDate === 9) {
+        let logo = document.getElementById("special-day-div");
+        let age = currentYear - 2015;
+        let birthDayMsg = '보카로 가사 위키 ' + age + '주년';
+        logo.style.alignItems = 'center';
+        logo.style.fontSize = '30px';
+        logo.style.fontWeight = 'bold';
+        logo.style.color = '#0000CC';
+        logo.innerHTML = birthDayMsg;
+    }
+
+    function copyrightTemplate(link, name, year) {
+        return "© <a href='" + link + "'>"+ name + "</a>, " + year;
+    }
+</script>
+[[/html]]
+
+[[div_ class="count-pages"]]
+[[module CountPages category="_default" tags="노래"]]
+[[div_ class="count-song"]]
+[[span class="title"]]가사[[/span]]
+%%total%%
+[[/div]]
+[[/module]]
+[[module CountPages category="_default"]]
+[[div_ class="count-all-pages"]]
+[[span class="title"]]전체 문서[[/span]]
+%%total%%
+[[/div]]
+[[/module]]
+[[/div]]
+
+[[ul_ class="card-wrap"]]
+[[li class="card-item allsongs"]][[a href="allsongs" class="allsongs"]]모든 노래[[/a]][[/li]]
+[[li class="card-item singers"]][[a href="singers" class="singers"]]음성 합성 엔진[[/a]][[/li]]
+[[li class="card-item artist"]][[a href="artist" class="artist"]]아티스트[[/a]][[/li]]
+[[li class="card-item series"]][[a href="series" class="series"]]시리즈[[/a]][[/li]]
+[[li class="card-item numbers"]][[a href="numbers" class="numbers"]]인원수[[/a]][[/li]]
+[[li class="card-item million"]][[a href="million" class="million"]]밀리언
+달성곡[[/a]][[/li]]
+[[/ul]]
+
+[[div_ class="random-song"]]
+++ 랜덤 추천 가사
+[[module ListPages order="random" limit="1" tag="노래"]]
+[[div_ class="random-title card-item"]]
+%%title_linked%%
+[[/div]]
+[[/module]]
+[[/div]]
+
+++ 최근에 번역된 가사
+[[module ListPages order="created_at desc" limit="10" perPage="30" tags="노래" separate="no"]]
+  [[head]]
+    [[table class="listpages-table"]]
+      [[row class="listpages-table-head"]]
+        [[hcell class="listpages-page"]]페이지[[/hcell]]
+        [[hcell class="listpages-date"]]작성일[[/hcell]]
+        [[hcell class="listpages-comment"]]댓글[[/hcell]]
+      [[/row]]
+  [[/head]]
+
+  [[body]]
+      [[row class="listpages-table-body"]]
+        [[cell class="listpages-page"]]%%title_linked%%[[/cell]]
+        [[cell class="listpages-date"]]%%created_at|%Y/%m/%d|agohover %%[[/cell]]
+        [[cell class="listpages-comment"]]%%comments%%[[/cell]]
+      [[/row]]
+  [[/body]]
+
+  [[foot]]
+      [[row class="listpages-table-foot"]]
+        [[cell class="listpages-footer" colspan="4"]][[a href="recently-translated-lyrics" class="listpages-footer-link"]]전체 보기[[/a]][[/cell]]
+      [[/row]]
+    [[/table]]
+  [[/foot]]
+[[/module]]
+
+++ 포럼 바로가기!
+[[module ForumStart]]
+[!-- 포럼 작동을 유지하려면 이 페이지를 변경하지 마시오. --]
+
+[[module css]]
+.count-pages {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    border: 3px solid #fff;
+    border-radius: 1em;
+    box-shadow: 3px 3px 6px #999;
+    font-size: 1.3em;
+    line-height: 2.5em;
+    padding: 1em;
+    margin: 1em 0;
+    color: #fff;
+    text-shadow: 1px 1px 3px #000;
+    background: repeating-linear-gradient( -60deg, #05e, #05e 55%, #6799ff 55.01%, #6799ff 100%);
+}
+
+span.title {
+    font-weight: bold;
+    font-size: 1.8em;
+}
+
+.card-wrap {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-row-gap: 1em;
+    list-style: none;
+    width: 100%;
+    margin: 1em 0;
+    padding: 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-item {
+    border-radius: 1em;
+    border: 3px solid #fff;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 1px 1px 3px #ccc;
+    height: 300px;
+    -webkit-transition: .5s ease-in-out .05s;
+    transition: .5s ease-in-out .05s;
+}
+
+.card-item:hover {
+    transition: .2s cubic-bezier(.42, 0, .03, .96);
+    box-shadow: 2px 2px 5px #333;
+}
+
+.card-item.allsongs {
+    background: url(http://vocaro.wdfiles.com/local--files/main/musical_note.png) center / 100% no-repeat;
+    background-color: hsl(0, 31%, 34%);
+}
+
+.card-item.singers {
+    background: url(http://vocaro.wdfiles.com/local--files/main/miku_v4x_silhouette.png) center / auto 100%;
+    background-color: rgb(59, 113, 91);
+}
+
+.card-item.artist {
+    background: url(http://vocaro.wdfiles.com/local--files/main/bass_clef.svg) center / 80% no-repeat;
+    background-color: hsl(311, 31%, 34%);
+}
+
+.card-item.series {
+    background: url(http://vocaro.wikidot.com/local--files/main/album.png) center / 90% no-repeat;
+    background-color: hsl(100, 31%, 34%);
+}
+
+.card-item.numbers {
+    background: url(http://vocaro.wdfiles.com/local--files/main/rin_len_v4x_silhouette.png) center / auto 100%;
+    background-color: hsl(56, 31%, 34%);
+}
+
+.card-item.million {
+    background: url(http://vocaro.wikidot.com/local--files/main/chart.svg) center / 70% no-repeat;
+    background-color: hsl(194, 31%, 34%);
+}
+
+.card-item.allsongs:hover {
+    background-size: 150%;
+    background-color: hsl(0, 70%, 66%);
+}
+
+.card-item.singers:hover {
+    background-size: auto 120%;
+    background-color: hsl(134, 70%, 66%);
+}
+
+.card-item.artist:hover {
+    background-size: 100%;
+    background-color: hsl(311, 70%, 66%);
+}
+
+.card-item.series:hover {
+    background-size: 120%;
+    background-color: hsl(100, 70%, 66%);
+}
+
+.card-item.numbers:hover {
+    background-size: auto 120%;
+    background-color: hsl(56, 70%, 76%);
+}
+
+.card-item.million:hover {
+    background-size: 90%;
+    background-color: hsl(194, 70%, 66%);
+}
+
+.card-item a {
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    font-size: 1.5em;
+    color: #fff;
+    backdrop-filter: blur(2px);
+    border-radius: 1em;
+    line-height: 1.4em;
+}
+
+.card-item a:hover {
+    backdrop-filter: blur(0);
+}
+
+.card-item a span.fas {
+    font-size: 5em;
+}
+
+@media(max-width:479px) {
+    .card-wrap {
+        grid-template-columns: 45% 45%;
+    }
+
+    .card-item {
+        height: 150px;
+    }
+}
+
+@media(min-width:480px) and (max-width:580px), 
+(min-width:768px) and (max-width:979px) {
+    li.card-item {
+        height: 200px;
+    }
+}
+
+.random-song .random-title {
+    background-color: #6799ff;
+    width: 100%;
+    height: 8em;
+    font-size: 2em;
+    line-height: 1.5em;
+    border-radius: .5em;
+}
+
+.random-song .random-title a {
+    color: #fff;
+    transition: .2s cubic-bezier(.42, 0, .03, .96);
+    padding: 1em;
+    backdrop-filter: blur(0);
+}
+
+.random-song .random-title:hover a {
+    color: #ba003c;
+}
+
+.listpages-table {
+    width: 100%;
+    border-radius: 1em;
+    overflow: hidden;
+    border: 3px solid #fff;
+    box-shadow: 4px 2px 6px #ccc;
+    margin-bottom: 1em;
+}
+
+.listpages-table th,
+.listpages-table-foot {
+    padding: 1em;
+    background-color: #6799ff;
+    color: #fff;
+}
+
+.listpages-table-body {
+    border-bottom: 1px solid #fff;
+}
+
+.listpages-table-body:hover {
+    background-color: #adc9fb;
+}
+
+.listpages-page a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: 1em 0 1em 1em;
+    word-break: break-all;
+}
+
+.listpages-page:hover a {
+    color: #ba003c;
+}
+
+.listpages-footer {
+    text-align: right;
+    padding: .5em;
+}
+
+.listpages-footer-link {
+    color: #fff;
+}
+
+.listpages-footer-link:hover {
+    color: #ba003c;
+}
+
+td.listpages-date, 
+td.listpages-comment {
+    padding: 1em;
+    text-align: center;
+    font-size: 0.8em;
+    word-break: keep-all;
+}
+
+span.rss-icon {
+    display: none;
+}
+
+.feedinfo {
+    text-align: right;
+}
+
+.feedinfo a:before {
+    font-family: 'Font Awesome 5 Free';
+    content: '\f143';
+    font-weight: 700;
+    margin-right: .5em;
+    color: #FD7E14;
+}
+
+.forum-group {
+    border: 3px solid #fff;
+    border-radius: 1em;
+    box-shadow: 4px 2px 6px #ccc;
+}
+
+.forum-group div.head {
+    background-color: #6799ff;
+    border: none;
+    border-radius: calc(1em - 3px) calc(1em - 3px) 0 0;
+}
+
+.forum-group table {
+    border-collapse: collapse;
+    border: none;
+    overflow: hidden;
+    border-radius: 0 0 calc(1em - 3px) calc(1em - 3px);
+}
+
+.forum-group table tr.head td {
+    background-color: #adc9fb;
+}
+
+.forum-group table td {
+    border: none;
+}
+
+@media (max-width: 979px) {
+    tr.head td:first-child {
+        width: 35%;
+    }
+}
+
+@media (prefers-color-scheme : dark) {
+    .count-pages {
+        background: repeating-linear-gradient( -60deg, hsl(220 40% 40% / 1), hsl(220 40% 40% / 1) 55%, hsl(220 40% 50% / 1) 55.01%, hsl(220 40% 50% / 1) 100%);
+    }
+
+    .count-pages,
+    .card-item,
+    .listpages-table,
+    .forum-group {
+        box-shadow: 4px 2px 6px #333;
+    }
+
+    .random-song .random-title {
+        background-color: hsl(220deg 40% 30%);
+    }
+
+    .listpages-table th, .listpages-table-foot {
+        background-color: hsl(220deg 40% 30%);
+    }
+
+    .listpages-table-body {
+        background-color: hsl(220deg 40% 50%);
+    }
+
+    .listpages-table-body:hover {
+        background-color: hsl(220deg 40% 40%);
+    }
+
+    .listpages-page a {
+        color: hsl(346deg 0% 100%);
+    }
+
+    .listpages-page:hover a {
+        color: hsl(340deg 100% 20%);
+    }
+
+    .forum-group table td.name .description {
+        color: #fff;
+    }
+
+    .forum-group div.head {
+        background-color: hsl(220deg 40% 30%);
+    }
+    
+    .forum-group table tr.head td {
+        background-color: hsl(220deg 40% 40%);
+    }
+
+    .forum-group table tr {
+        background-color: hsl(220deg 40% 50%);
+    }
+}
+[[/module]]

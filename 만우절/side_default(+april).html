@@ -1,0 +1,366 @@
+
+[[html]]
+    <style>
+    @import url(https://use.fontawesome.com/releases/v5.11.2/css/all.css);
+    body {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    form#search {
+        display: flex;
+        width: calc(100% - 10px);
+        justify-content: space-evenly;
+        align-items: center;
+        border: 3px solid #fff;
+        border-radius: 10px;
+    }
+
+    #search input[type="text"] {
+        width: 80%;
+        height: 30px;
+        border: none;
+        background-color: #D9E5FF;
+        /* background-color: #FAD2DB; */
+        padding: 0;
+        border-radius: 7px 0 0 7px;
+    }
+
+    #search input[type="text"]:focus {
+        outline: 0;
+        font-style: normal;
+        text-indent: 1em;
+    }
+
+    #search input[type="button"] {
+        width: 20%;
+        height: 30px;
+        background: #6799ff url(http://vocaro.wikidot.com/local--files/nav:side/flower-searchButton.png) no-repeat center center;
+        /* background: #F74972 url(http://vocaro.wikidot.com/local--files/nav:side/flower-searchButton.png) no-repeat center center; */
+        border: none;
+        padding: 0 0 0 1em;
+        font-size: 10px;
+        color: #fff;
+        line-height: 10px;
+        border-radius: 0 7px 7px 0;
+        cursor: pointer;
+    }
+    </style>
+    <form id="search" onsubmit="return false">
+        <input type="text" name="searchW" onkeypress="if( event.keyCode == 13 ){mySearch();}" />
+        <input type="button" class="fas fa-search" name="start" onclick="mySearch();" />
+    </form>
+    <script type="text/javascript">
+        function mySearch(){
+        var formB = document.getElementById("search");
+        var Word = formB.searchW.value;
+        var urlBase = "http://vocaro.wikidot.com/search:googlesearch/q/";
+        urlBase += Word;
+        window.parent.window.location.href = urlBase;
+        }
+    </script>
+[[/html]]
+
+[[image http://vocaro.wdfiles.com/local--files/nav:side/logo.png style="
+    width: 80%;
+    height: auto;
+    border: 1em white solid;
+    box-shadow: 1px 1px 3px hsl(0deg 0% 70%);
+    border-radius: 10em;
+    margin: 1em auto;
+    max-width: 400px;
+"]]
+
+[[div class="side-block foldable-list-container"]]
+[[ul class="nav navbar-nav"]]
+[[li]][[span class="fas fa-list-ul"]]@<&nbsp;>@목록[[/span]]
+    [[ul class="dropdown-menu"]]
+    [[li]][[a href="/allsongs" class="fas fa-globe"]]@<&nbsp;>@전체[[/a]][[/li]]
+    [[li]][[a href="/singers" class="fas fa-user"]]@<&nbsp;>@음성 합성 엔진[[/a]][[/li]]
+    [[li]][[a href="/artist" class="fas fa-pen-nib"]]@<&nbsp;>@아티스트[[/a]][[/li]]
+    [[li]][[a href="/series" class="fas fa-compact-disc"]]@<&nbsp;>@시리즈[[/a]][[/li]]
+    [[li]][[a href="/numbers" class="fas fa-users"]]@<&nbsp;>@인원수[[/a]][[/li]]
+    [[li]][[a href="/million" class="fas fa-chart-line"]]@<&nbsp;>@밀리언 달성곡[[/a]][[/li]]
+    [[/ul]]
+[[/li]]
+[[li]][[span class="fas fa-comments"]]@<&nbsp;>@포럼[[/span]]
+    [[ul class="dropdown-menu"]]
+    [[li]][[a href="/forum:start" class="fas fa-comment"]]@<&nbsp;>@포럼 메인[[/a]][[/li]]
+    [[li]][[a href="/forum:recent-posts" class="fas fa-comment-dots"]]@<&nbsp;>@최근 포스트[[/a]][[/li]]
+    [[/ul]]
+[[/li]]
+[[li]][[span class="fas fa-book"]]@<&nbsp;>@안내[[/span]]
+    [[ul class="dropdown-menu"]]
+        [[li]][[a href="/guide:main" class="fas fa-book-reader"]]@<&nbsp;>@안내 메인[[/a]][[/li]]
+        [[li]][[a href="/guide:writing" class="fas fa-book-open"]]@<&nbsp;>@안내: 곡 작성[[/a]][[/li]]
+        [[li]][[a href="/guide:how-to-notate-ja-to-ko" class="fas fa-book-open"]]@<&nbsp;>@안내: 일본어 표기법[[/a]][[/li]]
+        [[li]][[a href="/guide:wiki-syntax" class="fas fa-book-open"]]@<&nbsp;>@안내: 위키 문법[[/a]][[/li]]
+        [[li]][[a href="/guide:join-the-site" class="fas fa-book-open"]]@<&nbsp;>@안내: 회원가입[[/a]][[/li]]
+        [[li]][[a href="/guide:wiki-translating-tool" class="fas fa-book-open"]]@<&nbsp;>@안내: 위키 번역 도구[[/a]][[/li]]
+        [[li]][[a href="/guide:etc" class="fas fa-book-open"]]@<&nbsp;>@안내: 기타[[/a]][[/li]]
+    [[/ul]]
+[[/li]]
+[[li class="admins-only"]][[span class="fas fa-cog"]]@<&nbsp;>@관리[[/span]]
+    [[ul class="dropdown-menu"]]
+    [[li]][[a href="/_admin" class="fas fa-wrench"]]@<&nbsp;>@사이트 매니저[[/a]][[/li]]
+    [[li]][[a href="/nav:top" class="fas fa-ellipsis-h"]]@<&nbsp;>@상단바[[/a]][[/li]]
+    [[li]][[a href="/nav:side" class="fas fa-ellipsis-v"]]@<&nbsp;>@사이드바[[/a]][[/li]]
+    [[li]][[a href="/system:list-all-categories" class="fas fa-sitemap"]]@<&nbsp;>@카테고리 목록[[/a]][[/li]]
+    [[li]][[a href="/system:recent-changes" class="fas fa-exchange-alt"]]@<&nbsp;>@최근 변경[[/a]][[/li]]
+    [[li]][[a href="/system:members" class="fas fa-id-badge"]]@<&nbsp;>@사이트 회원[[/a]][[/li]]
+    [[li]][[a href="/system:list-all-pages" class="fas fa-file-alt"]]@<&nbsp;>@모든 페이지[[/a]][[/li]]
+    [[/ul]]
+[[/li]]
+[[/ul]]
+
+[[/div]]
+
+----
+
+[[div class="side-block"]]
+[[=]]
+[[image http://vocaro.wdfiles.com/local--files/nav:side/cc30.png style="width: 30px; height: 30px;" link="http://creativecommons.org/licenses/by/3.0/deed.ko" alt="Creative Commons"]]@<&nbsp;>@[[image http://vocaro.wdfiles.com/local--files/nav:side/by30.png style="width: 30px; height: 30px;" link="http://creativecommons.org/licenses/by/3.0/deed.ko" alt="Creative Commons"]]
+[[span class="ccl" style="font-size: 0.8em;"]][http://creativecommons.org/licenses/by/3.0/deed.ko CC BY 3.0][[/span]]
+[[/=]]
+[[/div]]
+
+----
+
+[[div class="side-block profile"]]
+[[a href="https://www.youtube.com/channel/UC-iYylNZGJ9LexTnNeLdiCg" class="profile-link youtube" target="_blank"]][[image youtube-profile.jpg class="profile-image youtube"]]
+[[/a]]
+[[a href="https://www.youtube.com/channel/UCbaC1IKodeyAZe0nC2NtYxA" class="profile-link youtube" target="_blank"]][[image youtube-profile2.jpg class="profile-image youtube"]]
+[[/a]]
+[[a href="https://discord.gg/jsQWnNqMgs" class="profile-link discord" target="_blank"]][[image discord-profile.png class="profile-image discord"]]
+[[/a]]
+[[/div]]
+
+----
+
+[[div class="side-block social-button"]]
+[[module ListPages range="." limit="1"]]
+[[ul_ class="social-media-list"]]
+[[li]][[a href="*https://twitter.com/intent/tweet?text=%%title%%%20http%3A%2F%2F%%site_domain%%/%%fullname%%" class="twitter-share-button fab fa-twitter-square"]]Twitter[[/a]][[/li]]
+[[li]][[a href="*https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F%%site_domain%%/%%fullname%%" class="facebook-share-button fab fa-facebook-square"]]Facebook[[/a]][[/li]]
+[[li]][[a href="*https://social-plugins.line.me/lineit/share?url=http%3A%2F%2F%%site_domain%%/%%fullname%%" class="line-share-button fab fa-line"]]Line[[/a]][[/li]]
+[[/ul]]
+[[/module]]
+[[/div]]
+
+----
+
+[[div class="side-block sns"]]
+[[=]]
+[[html]]
+<a class="twitter-timeline" data-lang="ko" data-height="500" href="https://twitter.com/vocaro_lyrics?ref_src=twsrc%5Etfw">Tweets by vocaro_lyrics</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+[[/html]]
+[[/=]]
+[[/div]]
+
+----
+
+[[div class="side-block discord"]]
+[[html]]
+<iframe src="https://discord.com/widget?id=846709165648248872&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+[[/html]]
+[[/div]]
+
+~~~~
+
+[!-- 아래 내용은 제거하지 마시오 --]
+[[module CSS]]
+.admins-only, li.admins-only{  display: none; }
+[[/module]]
+
+[[div style="display : none;"]]
+[[module ListUsers users="."]]
+[[include admincss:%%name%%]]
+[[/module]]
+[[/div]]
+
+~~~~
+[[module css]]
+.foldable-list-container ul li ul li {
+    margin-left: 1.5em;
+}
+
+#side-bar .side-block ul li span.fas {
+    display: inline-block;
+    padding: 1em 0.4em;
+}
+
+/* TEXT color animation is from SCP-JP */
+.hue {
+  animation: hue-rotate 10s linear infinite;
+}
+@keyframes hue-rotate {
+  from {
+    -webkit-filter: hue-rotate(0);
+    -moz-filter: hue-rotate(0);
+    -ms-filter: hue-rotate(0);
+    filter: hue-rotate(0);
+  }
+  to {
+    -webkit-filter: hue-rotate(360deg);
+    -moz-filter: hue-rotate(360deg);
+    -ms-filter: hue-rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
+
+span.ccl a {
+    color: #010E8F;
+}
+
+#side-bar ul.nav li a {
+height: auto;
+    border-radius: .8em;
+    box-shadow: 3px 4px 5px #ccc;
+    background: #37f;
+    /* background: #EF7793; */
+    font-weight: 900;
+    color: #fff;
+    font-size: 1.1em;
+    margin: 0.3em auto;
+    line-height: 3em;
+    overflow: hidden;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.8em;
+    border: 3px solid #fff;
+    min-width: 65px;
+}
+
+#side-bar ul.nav li a:hover {
+    text-shadow: 1px 1px 0px #003AA1, 2px 2px 0px #003AA1, 3px 3px 0px #003AA1, 4px 4px 0px #003AA1, 5px 5px 0px #003AA1, 6px 6px 0px #003AA1, 7px 7px 0px #003AA1, 8px 8px 0px #003AA1, 9px 9px 0px #003AA1, 10px 10px 0px #003AA1, 11px 11px 0px #003AA1, 12px 12px 0px #003AA1, 13px 13px 0px #003AA1, 14px 14px 0px #003AA1, 15px 15px 0px #003AA1, 16px 16px 0px #003AA1, 17px 17px 0px #003AA1, 18px 18px 0px #003AA1, 19px 19px 0px #003AA1, 20px 20px 0px #003AA1, 21px 21px 0px #003AA1, 22px 22px 0px #003AA1, 23px 23px 0px #003AA1, 24px 24px 0px #003AA1, 25px 25px 0px #003AA1;
+    /* text-shadow: 1px 1px 0px #F74972, 2px 2px 0px #F74972, 3px 3px 0px #F74972, 4px 4px 0px #F74972, 5px 5px 0px #F74972, 6px 6px 0px #F74972, 7px 7px 0px #F74972, 8px 8px 0px #F74972, 9px 9px 0px #F74972, 10px 10px 0px #F74972, 11px 11px 0px #F74972, 12px 12px 0px #F74972, 13px 13px 0px #F74972, 14px 14px 0px #F74972, 15px 15px 0px #F74972, 16px 16px 0px #F74972, 17px 17px 0px #F74972, 18px 18px 0px #F74972, 19px 19px 0px #F74972, 20px 20px 0px #F74972, 21px 21px 0px #F74972, 22px 22px 0px #F74972, 23px 23px 0px #F74972, 24px 24px 0px #F74972, 25px 25px 0px #F74972; */
+    transition: .3s ease-in-out;
+}
+
+#side-bar iframe.html-block-iframe {
+    padding: 0;
+}
+
+#side-bar ul.social-media-list {
+    display: flex;
+    width: 100%;
+    min-height: 50px;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+ 
+#side-bar ul.social-media-list li {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+}
+ 
+#side-bar ul.social-media-list li a {
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+    font-size: 0;
+    text-decoration: none;
+}
+
+#side-bar ul.social-media-list li a:hover {
+    text-shadow: 1px 1px rgba(204,204,204, 1.00), 2px 2px rgba(204,204,204, 1.00), 3px 3px rgba(204,204,204, 1.00), 4px 4px rgba(204,204,204, 1.00), 5px 5px rgba(204,204,204, 1.00), 6px 6px rgba(204,204,204, 1.00), 7px 7px rgba(204,204,204, 1.00), 8px 8px rgba(204,204,204, 1.00), 9px 9px rgba(204,204,204, 1.00), 10px 10px rgba(204,204,204, 1.00), 11px 11px rgba(204,204,204, 1.00), 12px 12px rgba(204,204,204, 1.00), 13px 13px rgba(204,204,204, 1.00), 14px 14px rgba(204,204,204, 0.99), 15px 15px rgba(204,204,204, 0.99), 16px 16px rgba(204,204,204, 0.99), 17px 17px rgba(204,204,204, 0.99), 18px 18px rgba(204,204,204, 0.98), 19px 19px rgba(204,204,204, 0.98), 20px 20px rgba(204,204,204, 0.97), 21px 21px rgba(204,204,204, 0.97), 22px 22px rgba(204,204,204, 0.96), 23px 23px rgba(204,204,204, 0.96), 24px 24px rgba(204,204,204, 0.95), 25px 25px rgba(204,204,204, 0.94), 26px 26px rgba(204,204,204, 0.93), 27px 27px rgba(204,204,204, 0.91), 28px 28px rgba(204,204,204, 0.90), 29px 29px rgba(204,204,204, 0.89), 30px 30px rgba(204,204,204, 0.87), 31px 31px rgba(204,204,204, 0.85), 32px 32px rgba(204,204,204, 0.83), 33px 33px rgba(204,204,204, 0.81), 34px 34px rgba(204,204,204, 0.79), 35px 35px rgba(204,204,204, 0.76), 36px 36px rgba(204,204,204, 0.73), 37px 37px rgba(204,204,204, 0.70), 38px 38px rgba(204,204,204, 0.67), 39px 39px rgba(204,204,204, 0.63), 40px 40px rgba(204,204,204, 0.59), 41px 41px rgba(204,204,204, 0.55), 42px 42px rgba(204,204,204, 0.50), 43px 43px rgba(204,204,204, 0.45), 44px 44px rgba(204,204,204, 0.40), 45px 45px rgba(204,204,204, 0.34), 46px 46px rgba(204,204,204, 0.28), 47px 47px rgba(204,204,204, 0.22), 48px 48px rgba(204,204,204, 0.15), 49px 49px rgba(204,204,204, 0.08), 50px 50px rgba(204,204,204, 0.00);
+    transition: .3s ease-in-out;
+}
+ 
+#side-bar ul.social-media-list li a:before {
+    font-size: 30px;
+}
+ 
+#side-bar ul.social-media-list li a.twitter-share-button {
+    color: #38A1F3;
+}
+ 
+#side-bar ul.social-media-list li a.facebook-share-button {
+    color: #4267b2;
+}
+ 
+#side-bar ul.social-media-list li a.line-share-button {
+    color: #00c300;
+}
+
+#side-bar .fas:before {
+    width: 20px;
+    text-align: center;
+}
+
+.side-block.profile {
+    position: relative;
+    display: flex;
+}
+
+a.profile-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+}
+
+a.profile-link:before {
+    content: '';
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    z-index: 3;
+    filter: contrast(0.8);
+    margin: 0;
+}
+
+a.profile-link.youtube:before {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4KCjxzdmcKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIgogICB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgeG1sbnM6c29kaXBvZGk9Imh0dHA6Ly9zb2RpcG9kaS5zb3VyY2Vmb3JnZS5uZXQvRFREL3NvZGlwb2RpLTAuZHRkIgogICB4bWxuczppbmtzY2FwZT0iaHR0cDovL3d3dy5pbmtzY2FwZS5vcmcvbmFtZXNwYWNlcy9pbmtzY2FwZSIKICAgdmVyc2lvbj0iMS4xIgogICBpZD0iTGF5ZXJfMSIKICAgeD0iMHB4IgogICB5PSIwcHgiCiAgIHZpZXdCb3g9IjAgMCA3MS40MTIwNjUgNTAiCiAgIHhtbDpzcGFjZT0icHJlc2VydmUiCiAgIGlua3NjYXBlOnZlcnNpb249IjAuOTEgcjEzNzI1IgogICBzb2RpcG9kaTpkb2NuYW1lPSJZb3VUdWJlX2Z1bGwtY29sb3JfaWNvbiAoMjAxNykuc3ZnIgogICB3aWR0aD0iNzEuNDEyMDY0IgogICBoZWlnaHQ9IjUwIj48bWV0YWRhdGEKICAgICBpZD0ibWV0YWRhdGEzMyI+PHJkZjpSREY+PGNjOldvcmsKICAgICAgICAgcmRmOmFib3V0PSIiPjxkYzpmb3JtYXQ+aW1hZ2Uvc3ZnK3htbDwvZGM6Zm9ybWF0PjxkYzp0eXBlCiAgICAgICAgICAgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIgLz48ZGM6dGl0bGU+PC9kYzp0aXRsZT48L2NjOldvcms+PC9yZGY6UkRGPjwvbWV0YWRhdGE+PGRlZnMKICAgICBpZD0iZGVmczMxIiAvPjxzb2RpcG9kaTpuYW1lZHZpZXcKICAgICBwYWdlY29sb3I9IiNmZmZmZmYiCiAgICAgYm9yZGVyY29sb3I9IiM2NjY2NjYiCiAgICAgYm9yZGVyb3BhY2l0eT0iMSIKICAgICBvYmplY3R0b2xlcmFuY2U9IjEwIgogICAgIGdyaWR0b2xlcmFuY2U9IjEwIgogICAgIGd1aWRldG9sZXJhbmNlPSIxMCIKICAgICBpbmtzY2FwZTpwYWdlb3BhY2l0eT0iMCIKICAgICBpbmtzY2FwZTpwYWdlc2hhZG93PSIyIgogICAgIGlua3NjYXBlOndpbmRvdy13aWR0aD0iMTM2NiIKICAgICBpbmtzY2FwZTp3aW5kb3ctaGVpZ2h0PSI3MTUiCiAgICAgaWQ9Im5hbWVkdmlldzI5IgogICAgIHNob3dncmlkPSJmYWxzZSIKICAgICBmaXQtbWFyZ2luLXRvcD0iMCIKICAgICBmaXQtbWFyZ2luLWxlZnQ9IjAiCiAgICAgZml0LW1hcmdpbi1yaWdodD0iMCIKICAgICBmaXQtbWFyZ2luLWJvdHRvbT0iMCIKICAgICBpbmtzY2FwZTp6b29tPSIxLjM1ODg5MjUiCiAgICAgaW5rc2NhcGU6Y3g9Ii03MS42NjgyNjMiCiAgICAgaW5rc2NhcGU6Y3k9IjM5LjIzNzY5NiIKICAgICBpbmtzY2FwZTp3aW5kb3cteD0iLTgiCiAgICAgaW5rc2NhcGU6d2luZG93LXk9Ii04IgogICAgIGlua3NjYXBlOndpbmRvdy1tYXhpbWl6ZWQ9IjEiCiAgICAgaW5rc2NhcGU6Y3VycmVudC1sYXllcj0iTGF5ZXJfMSIgLz48c3R5bGUKICAgICB0eXBlPSJ0ZXh0L2NzcyIKICAgICBpZD0ic3R5bGUzIj4KCS5zdDB7ZmlsbDojRkYwMDAwO30KCS5zdDF7ZmlsbDojRkZGRkZGO30KCS5zdDJ7ZmlsbDojMjgyODI4O30KPC9zdHlsZT48ZwogICAgIGlkPSJnNSIKICAgICB0cmFuc2Zvcm09InNjYWxlKDAuNTg4MjM1MjksMC41ODgyMzUyOSkiPjxwYXRoCiAgICAgICBjbGFzcz0ic3QwIgogICAgICAgZD0iTSAxMTguOSwxMy4zIEMgMTE3LjUsOC4xIDExMy40LDQgMTA4LjIsMi42IDk4LjcsMCA2MC43LDAgNjAuNywwIDYwLjcsMCAyMi43LDAgMTMuMiwyLjUgOC4xLDMuOSAzLjksOC4xIDIuNSwxMy4zIDAsMjIuOCAwLDQyLjUgMCw0Mi41IDAsNDIuNSAwLDYyLjMgMi41LDcxLjcgMy45LDc2LjkgOCw4MSAxMy4yLDgyLjQgMjIuOCw4NSA2MC43LDg1IDYwLjcsODUgYyAwLDAgMzgsMCA0Ny41LC0yLjUgNS4yLC0xLjQgOS4zLC01LjUgMTAuNywtMTAuNyAyLjUsLTkuNSAyLjUsLTI5LjIgMi41LC0yOS4yIDAsMCAwLjEsLTE5LjggLTIuNSwtMjkuMyB6IgogICAgICAgaWQ9InBhdGg3IgogICAgICAgaW5rc2NhcGU6Y29ubmVjdG9yLWN1cnZhdHVyZT0iMCIKICAgICAgIHN0eWxlPSJmaWxsOiNmZjAwMDAiIC8+PHBvbHlnb24KICAgICAgIGNsYXNzPSJzdDEiCiAgICAgICBwb2ludHM9IjgwLjIsNDIuNSA0OC42LDI0LjMgNDguNiw2MC43ICIKICAgICAgIGlkPSJwb2x5Z29uOSIKICAgICAgIHN0eWxlPSJmaWxsOiNmZmZmZmYiIC8+PC9nPjwvc3ZnPg==);
+}
+
+a.profile-link.discord:before {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUzIiBoZWlnaHQ9IjM1MyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgb3ZlcmZsb3c9ImhpZGRlbiI+PGRlZnM+PGNsaXBQYXRoIGlkPSJjbGlwMCI+PHJlY3QgeD0iNDE2IiB5PSIxOTMiIHdpZHRoPSIzNTMiIGhlaWdodD0iMzUzIi8+PC9jbGlwUGF0aD48L2RlZnM+PGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwKSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTQxNiAtMTkzKSI+PHBhdGggZD0iTTQxNiAzNjlDNDE2IDI3MS43OTggNDk0Ljc5OCAxOTMgNTkyIDE5MyA2ODkuMjAyIDE5MyA3NjggMjcxLjc5OCA3NjggMzY5IDc2OCA0NjYuMjAyIDY4OS4yMDIgNTQ1IDU5MiA1NDUgNDk0Ljc5OCA1NDUgNDE2IDQ2Ni4yMDIgNDE2IDM2OVoiIGZpbGw9IiM1ODY1RjIiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjxwYXRoIGQ9Ik02NzEuMjg3IDI5Ny40NjJDNjU2LjU5MSAyOTAuNjkxIDY0MC44OCAyODUuNzc5IDYyNC40NTQgMjgyLjk5MSA2MjIuNDM3IDI4Ni41NzYgNjIwLjA3OSAyOTEuNDA4IDYxOC40NTUgMjk1LjIzMiA2MDAuOTk0IDI5Mi42NTYgNTgzLjY5NCAyOTIuNjU2IDU2Ni41NTIgMjk1LjIzMiA1NjQuOTI5IDI5MS40MDggNTYyLjUxOCAyODYuNTc2IDU2MC40ODIgMjgyLjk5MSA1NDQuMDQgMjg1Ljc3OSA1MjguMzA5IDI5MC43MTggNTEzLjYxNSAyOTcuNTE2IDQ4My45NzYgMzQxLjU5NSA0NzUuOTQ0IDM4NC42MTMgNDc5Ljk2IDQyNi45OTQgNDk5LjYxOCA0NDEuNDY2IDUxOC42NjggNDUwLjIyOCA1MzcuMzk3IDQ1NS45OTEgNTQyLjAyIDQ0OS43MjQgNTQ2LjE0NSA0NDMuMDU5IDU0OS42OTkgNDM2LjAyMiA1NDIuOTMxIDQzMy40OTkgNTM2LjQ1MiA0MzAuMzY2IDUzMC4zMjYgNDI2Ljc1NSA1MzEuOTUzIDQyNS41NiA1MzMuNTM5IDQyNC4zMzggNTM1LjA3NiA0MjMuMDY0IDU3Mi40MjcgNDQwLjI0NCA2MTMuMDExIDQ0MC4yNDQgNjQ5LjkxNiA0MjMuMDY0IDY1MS40NjggNDI0LjMzOCA2NTMuMDU4IDQyNS41NiA2NTQuNjYzIDQyNi43NTUgNjQ4LjUyMiA0MzAuMzkzIDY0Mi4wMjMgNDMzLjUyNiA2MzUuMjU2IDQzNi4wNDkgNjM4LjgxIDQ0My4wNTkgNjQyLjkxNiA0NDkuNzI0IDY0Ny41NTggNDU1Ljk5MSA2NjYuMzA1IDQ1MC4yNTUgNjg1LjM3NCA0NDEuNDY2IDcwNS4wMzIgNDI2Ljk5NCA3MDkuNzQ1IDM3Ny44NjggNjk2Ljk3OSAzMzUuMjQ5IDY3MS4yODcgMjk3LjQ2MlpNNTU0Ljc4NyA0MDAuOTQ0QzU0My41NzYgNDAwLjk0NCA1MzQuMzc5IDM5MC42MTUgNTM0LjM3OSAzNzguMDgxIDUzNC4zNzkgMzY1LjUyMSA1NDMuMzc3IDM1NS4xOTEgNTU0Ljc4NyAzNTUuMTkxIDU2Ni4xOTYgMzU1LjE5MSA1NzUuMzkgMzY1LjQ5NCA1NzUuMTk1IDM3OC4wODEgNTc1LjIxMyAzOTAuNjE1IDU2Ni4xOTYgNDAwLjk0NCA1NTQuNzg3IDQwMC45NDRaTTYzMC4yMDIgNDAwLjk0NEM2MTguOTkxIDQwMC45NDQgNjA5Ljc5NyAzOTAuNjE1IDYwOS43OTcgMzc4LjA4MSA2MDkuNzk3IDM2NS41MjEgNjE4Ljc5NiAzNTUuMTkxIDYzMC4yMDIgMzU1LjE5MSA2NDEuNjEyIDM1NS4xOTEgNjUwLjgwOCAzNjUuNDk0IDY1MC42MSAzNzguMDgxIDY1MC42MSAzOTAuNjE1IDY0MS42MTIgNDAwLjk0NCA2MzAuMjAyIDQwMC45NDRaIiBmaWxsPSIjRkZGRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L2c+PC9zdmc+);
+}
+
+#side-bar .profile img.profile-image {
+    border-radius: 50%;
+    opacity: 0.4;
+    filter: grayscale(.5);
+    z-index: 2;
+}
+
+#side-bar a.profile-link:hover img.profile-image {
+    filter: grayscale(0);
+    opacity: 1;
+    z-index: 4;
+    -webkit-transform; scale(1.1);
+    transform: scale(1.1);
+    -webkit-transition: z-index .3s, opacity .3s, filter .1s, -webkit-transform .3s;
+    transition: opacity .3s, filter .3s, transform .3s;
+}
+
+@media (prefers-color-scheme : dark) {
+    #side-bar ul.nav li a {
+        background-color: hsl(220deg 40% 30%);
+        /* background-color: hsl(346 33% 45%); */
+        box-shadow: 3px 4px 5px #333;
+    }
+
+    #side-bar ul.nav li a:hover {
+        text-shadow: 1px 1px 0px #3d588f, 2px 2px 0px #3d588f, 3px 3px 0px #3d588f, 4px 4px 0px #3d588f, 5px 5px 0px #3d588f, 6px 6px 0px #3d588f, 7px 7px 0px #3d588f, 8px 8px 0px #3d588f, 9px 9px 0px #3d588f, 10px 10px 0px #3d588f, 11px 11px 0px #3d588f, 12px 12px 0px #3d588f, 13px 13px 0px #3d588f, 14px 14px 0px #3d588f, 15px 15px 0px #3d588f, 16px 16px 0px #3d588f, 17px 17px 0px #3d588f, 18px 18px 0px #3d588f, 19px 19px 0px #3d588f, 20px 20px 0px #3d588f, 21px 21px 0px #3d588f, 22px 22px 0px #3d588f, 23px 23px 0px #3d588f, 24px 24px 0px #3d588f, 25px 25px 0px #3d588f;
+        /* text-shadow: 1px 1px 0px #44222a, 2px 2px 0px #44222a, 3px 3px 0px #44222a, 4px 4px 0px #44222a, 5px 5px 0px #44222a, 6px 6px 0px #44222a, 7px 7px 0px #44222a, 8px 8px 0px #44222a, 9px 9px 0px #44222a, 10px 10px 0px #44222a, 11px 11px 0px #44222a, 12px 12px 0px #44222a, 13px 13px 0px #44222a, 14px 14px 0px #44222a, 15px 15px 0px #44222a, 16px 16px 0px #44222a, 17px 17px 0px #44222a, 18px 18px 0px #44222a, 19px 19px 0px #44222a, 20px 20px 0px #44222a, 21px 21px 0px #44222a, 22px 22px 0px #44222a, 23px 23px 0px #44222a, 24px 24px 0px #44222a, 25px 25px 0px #44222a; */
+    }
+
+    #side-bar iframe.html-block-iframe {
+        filter: brightness(0.7);
+    }
+}
+[[/module]]
